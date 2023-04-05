@@ -1,7 +1,7 @@
 from aiogram.types import Message
 
 from loader import dp
-from keyboards.inline.inline_kb import menu_ikb
+from keyboards.inline.client import menu_ikb
 
 
 @dp.message_handler(commands=['menu'])
