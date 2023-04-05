@@ -1,1 +1,1 @@
-<h1 align="center">Template for telegram bot on aiogram</h1>
+<h1 align="center">Translator bot on aiogram</h1>
