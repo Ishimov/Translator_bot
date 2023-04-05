@@ -7,16 +7,16 @@ def db_start() -> None:
     cur.execute("CREATE TABLE IF NOT EXISTS profile(user_id TEXT PRIMARY KEY, language TEXT)")
     db.commit()
 
-async def create_profile(user_id) -> None:
+async def create_profile(user_id: int) -> None:
     user = cur.execute(f"SELECT 1 FROM profile WHERE user_id == '{user_id}'").fetchone()
     if not user:
         cur.execute("INSERT INTO profile VALUES(?, ?)", (user_id, 'EN'))
         db.commit()
 
-async def edit_profile(user_id, lang) -> None:
+async def edit_profile(user_id: int, lang: str) -> None:
     cur.execute(f"UPDATE profile SET language = '{lang}' WHERE user_id == '{user_id}'")
     db.commit()
 
-async def language_select(user_id) -> str:
+async def language_select(user_id: int) -> str:
     lang = cur.execute(f"SELECT language FROM profile WHERE user_id == '{user_id}'").fetchone()
     return lang[0]

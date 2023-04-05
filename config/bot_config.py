@@ -4,5 +4,6 @@ BOT_TOKEN = dotenv_values('.env')['BOT_TOKEN']
 
 DEFAULT_COMMANDS = (
     ('start', 'Запустить бота'),
-    ('help', 'Доступные команды')
+    ('help', 'Доступные команды'),
+    ('menu', 'Основное меню')
 )
